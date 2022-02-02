@@ -4,7 +4,7 @@ Activa o desactiva el inicio de sesión automático en GNU/Linux.<br> Compatible
 Comandos:
 
 <ul><li><b>autologin</b> -> activa</li>
-  <li><b>noautologin</b> -> desactiva</li></ul><br>
+  <li><b>noautologin</b> -> desactiva</li></ul>
 
 <i>Nota: instalar desde paquete deb o revisar y ejecutar el script postinst</i>
 
@@ -17,7 +17,7 @@ Enable or disable automatic login in GNU/Linux.<br> Compatible with GDM3, Lightd
 Commands:
 
 <ul><li><b>autologin</b> -> activate</li>
-  <li><b>noautologin</b> -> disable</li></ul><br>
+  <li><b>noautologin</b> -> disable</li></ul>
 
 <i>Note: install from deb package or review and run postinst script</i>
 
