@@ -1,0 +1,52 @@
+#!/bin/bash
+# -*- ENCODING: UTF-8 -*-
+
+#######################################################################
+#                                                                     #
+# no-autologin v.1.3                                                  #
+# Desactiva el login automático en Lightdm/Slim/GDM3                  #
+#                                                                     #
+#######################################################################
+#                                                                     #
+#                                                                     #
+# Modo de uso: sudo no-ologin                                         #
+#                                                                     #
+# Este código viene incluido en el Sistema Operativo Quirinux.        #
+# www.quirinux.org                                                    #
+#                                                                     #
+# Fue programado por Charlie Martínez en Noviembre de 2019.           #
+# www.charliemartinez.com.ar                                          #
+# cmartinez@quirinux.org	                                          #
+#								                                      #
+#                                                                     #
+# Compartido bajo licencia GPLv2:                                     #
+#                                                                     #
+# Usted puede usar, modificar, copiar, compartir, redistribuir        #
+# este software, siempre y cuando respete los créditos del autor.     #
+#                                                                     #
+#######################################################################
+
+# Desactiva el autologin:
+
+FILE1="/opt/login.bk/lightdm.conf"
+FILE2="/opt/login.bk/slim.conf"
+FILE3="/opt/login.bk/custom.conf"
+
+if [ -e $FILE1 ]; then
+sudo cp /opt/login.bk/lightdm.conf /etc/lightdm/lightdm.conf 
+echo "Inicio de sesión automático en Lightdm DESACTIVADO."
+fi
+
+if [ -e $FILE2 ]; then
+sudo cp /opt/login.bk/slim.conf /etc/slim.conf
+echo "Inicio de sesión automático en Slim DESACTIVADO."
+fi
+
+if [ -e $FILE3 ]; then
+sudo cp /opt/login.bk/custom.conf /etc/gdm3/custom.conf
+echo "Inicio de sesión automático en GDM3 DESACTIVADO."
+fi
+
+
+
+

@@ -1,0 +1,10 @@
+Package: autologin
+Version: 1.2.3
+Installed-Size: 915456
+Maintainer: Charlie Martinez <cmartinez@quirinux.org>
+Section: utils
+Homepage: https://www.quirinux.org
+Architecture: all
+Priority: optional
+Description: Inicio de sesion automático
+ Válido para Slimd, Lightdm y GDM3. Auto: Charlie Martínez, licencia GPLv2.

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FILE1="/etc/lightdm/lightdm.conf"
+FILE2="/etc/slim.conf"
+FILE3="/etc/gdm3/custom.conf"
+
+if [ -e ${FILE1} ]; then
+cp /opt/login/.bk/lightdm.conf /etc/lightdm/lightdm.conf
+fi 
+if [ -e ${FILE2} ]; then
+cp /opt/login.bk/slim.conf /etc/slim.conf
+fi
+if [ -e ${FILE3} ]; then
+cp /opt/login.bk/custom.conf /etc/gdm3/custom.conf
+fi
+rm -rf /opt/login.bk

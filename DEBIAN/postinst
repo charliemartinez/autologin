@@ -1,0 +1,26 @@
+#!/bin/bash
+
+FILE1="/etc/lightdm/lightdm.conf"
+FILE2="/etc/slim.conf"
+FILE3="/etc/gdm3/custom.conf"
+
+mkdir /opt/login.bk
+
+if [ -e ${FILE1} ]; then
+sudo chmod 755 /etc/lightdm/lightdm.conf
+sudo cp /etc/lightdm/lightdm.conf /opt/login.bk/lightdm.conf
+fi
+if [ -e ${FILE2} ]; then
+sudo chmod 755 /etc/slim.conf
+sudo cp /etc/slim.conf /opt/login.bk/slim.conf
+fi
+if [ -e ${FILE3} ]; then
+sudo chmod 755 /etc/gdm3/custom.conf
+sudo cp /etc/gdm3/custom.conf /opt/login.bk/custom.conf
+fi
+
+chmod 755 /usr/local/bin/autologin
+chmod 755 /usr/local/bin/noautologin
+
+
+

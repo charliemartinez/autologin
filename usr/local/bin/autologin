@@ -1,0 +1,59 @@
+#!/bin/bash
+# -*- ENCODING: UTF-8 -*-
+
+#######################################################################
+#                                                                     #
+# autologin v.1.3                                                     #
+# Configura autologin para usuario actual en Lightdm/Slim/GDM3        #
+#                                                                     #
+#######################################################################
+#                                                                     #
+#                                                                     #
+# Modo de uso: sudo autologin                                         #
+#                                                                     #
+# Este código viene incluido en el Sistema Operativo Quirinux.        #
+# www.quirinux.org                                                    #
+#                                                                     #
+# Fue programado por Charlie Martínez en Noviembre de 2019.           #
+# www.charliemartinez.com.ar                                          #
+# cmartinez@quirinux.org	                                          #
+#								                                      #
+# IMPORTANTE: 							                              #	
+# Requiere sudo, sino configura el autologin para el root...          #
+#                                                                     #
+# Compartido bajo licencia GPLv2:                                     #
+#                                                                     #
+# Usted puede usar, modificar, copiar, compartir, redistribuir        #
+# este software, siempre y cuando respete los créditos del autor.     #
+#                                                                     #
+#######################################################################
+
+# Activa el autologin:
+
+FILE1="/opt/login.bk/lightdm.conf"
+FILE2="/opt/login.bk/slim.conf"
+FILE3="/opt/login.bk/custom.conf"
+
+if [ -e $FILE1 ]; then
+sudo cp /opt/login.bk/lightdm.conf /etc/lightdm/lightdm.conf
+sudo sed -i "126i autologin-user=$USER" /etc/lightdm/lightdm.conf
+sudo sed -i "127i autologin-user-timeout=0" /etc/lightdm/lightdm.conf
+echo "Inicio de sesión automático en Lightdm ACTIVADO."
+fi
+
+if [ -e $FILE2 ]; then
+sudo cp /opt/login.bk/lightdm.conf /etc/lightdm/lightdm.conf
+sudo sed -i "73i default_user $USER" /etc/slim.conf
+sudo sed -i "81i auto_login yes" /etc/slim.conf
+echo "Inicio de sesión automático en Slim ACTIVADO."
+fi
+
+if [ -e $FILE3 ]; then
+sudo cp /opt/login.bk/custom.conf /etc/gdm3/custom.conf
+sudo sed -i "10i AutomaticLoginEnable = true" /etc/gdm3/custom.conf
+sudo sed -i "11i AutomaticLogin = $USER" /etc/gdm3/custom.conf
+echo "Inicio de sesión automático en GDM3 ACTIVADO."
+fi
+
+
+
