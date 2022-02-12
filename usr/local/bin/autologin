@@ -42,7 +42,7 @@ echo "Inicio de sesión automático en Lightdm ACTIVADO."
 fi
 
 if [ -e $FILE2 ]; then
-sudo cp /opt/login.bk/lightdm.conf /etc/lightdm/lightdm.conf
+sudo cp /opt/login.bk/slim.conf /etc/slim.conf
 sudo sed -i "73i default_user $USER" /etc/slim.conf
 sudo sed -i "81i auto_login yes" /etc/slim.conf
 echo "Inicio de sesión automático en Slim ACTIVADO."
